@@ -28,7 +28,7 @@ cp -a  ${INITRD}/init ${TARGET}/
 # CPIO archive 
 cd ${TARGET} 
 # TODO : create the cpio in ${INSTALL_OUT} 
-find . -print0 | cpio --null -ov --format=newc | gzip -9 > ${TARGET}/initrd.gz
+find . -print0 | cpio --null -ov --format=newc | gzip -9 > ${INITRD_IN}/initrd.gz
 cd -
 
 exit 0
