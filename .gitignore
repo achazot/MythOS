@@ -1,12 +1,12 @@
 
 ##############################################
-#               Build directory              #
+#              Output directories            #
 ##############################################
 #
 # generated isos
-build/target/*
-!build/target/.gitkeep
+target/output
+!target/output/.gitkeep
 # root of installer disk
-build/iso_root/*
-!build/iso_root/.gitkeep 
+target/iso_root/*
+!target/iso_root/.gitkeep 
 
