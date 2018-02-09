@@ -4,14 +4,15 @@ recovery()
 {
 	echo "Some init command failed."
 	echo "Dropping to a shell."
+	sleep 5
 	exec sh
 }
 
-mount -t proc none /proc
-mount -t sysfs none /sys
+mount -t proc none /proc || recovery 
+mount -t sysfs none /sys || recovery
 
-exec sh
+mount -o ro /dev/sda1 /mnt/root || recovery 
+umount /proc || recovery 
+umount /sys || recovery
 
-mount -o ro /dev/sda1 /mnt/root
-umount /proc
-umount /sys
+exit 0
