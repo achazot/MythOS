@@ -8,7 +8,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-source ../../../config/default.conf  
+source ../../../config/default.conf
 
 # Initialize target
 TARGET="${INITRD_IN}/initramfs"

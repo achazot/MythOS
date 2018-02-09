@@ -2,17 +2,17 @@
 
 recovery()
 {
-	echo "Some init command failed."
-	echo "Dropping to a shell."
-	sleep 5
-	exec sh
+	/bin/echo "Some init command failed."
+	/bin/echo "Dropping to a shell."
 }
 
-mount -t proc none /proc || recovery 
-mount -t sysfs none /sys || recovery
+/bin/mount -t proc none /proc || recovery 
+/bin/mount -t sysfs none /sys || recovery
 
-mount -o ro /dev/sda1 /mnt/root || recovery 
-umount /proc || recovery 
-umount /sys || recovery
+/bin/sh
+#/bin/mount -o ro /dev/sda1 /mnt/root || recovery 
+
+/bin/umount /proc || recovery 
+/bin/umount /sys || recovery
 
 exit 0
