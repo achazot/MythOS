@@ -25,4 +25,10 @@ cp -a ${REPOSITORY}/busybox ${TARGET}/bin/
 # Init script 
 cp -a  ${INITRD}/init ${TARGET}/
 
+# CPIO archive 
+cd ${TARGET} 
+# TODO : create the cpio in ${INSTALL_OUT} 
+find . -print0 | cpio --null -ov --format=newc | gzip -9 > ${TARGET}/initrd.gz
+cd -
+
 exit 0
