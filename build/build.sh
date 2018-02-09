@@ -32,21 +32,21 @@ EOF
 main ()
 {
     # Copy installer system
-    cp -ar "$ISOLINUX_IN" "$ISOLINUX_OUT"
-    cp -a "$KERNEL_IN" "$INSTALL_OUT"
-    cp -a "$INITRD_IN" "INSTALL_OUT"
-    
+    mkdir -p "$ISOLINUX_OUT"
+    cp "$ISOLINUX_IN/"* "$ISOLINUX_OUT/"
+    mkdir -p "$INSTALL_OUT"
+    cp "$KERNEL_IN/vmlinux" "$INSTALL_OUT/"
+    cp "$INITRD_IN/initrd.gz" "$INSTALL_OUT/"
 
     # Create iso from iso_root
     genisoimage -v -J -r -l \
-        -V "$ISO_NAME" \
-        -b isolinux/isolinux.bin \
-        -c isolinux/boot.cat \
-        -no-emul-boot -boot-load-size 4 -boot-info-table
-        -o "$OUTPUT/$ISO_FILE" \
-           "$ISO_ROOT"
+        -V "${ISO_NAME}" \
+        -b "isolinux/isolinux.bin" \
+        -no-emul-boot -boot-load-size 4 -boot-info-table \
+        -c "isolinux/boot.cat" \
+        -o "${OUTPUT}/${ISO_FILE}" \
+           "${ISO_ROOT}"
 }
--b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table
 
 
 
