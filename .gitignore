@@ -1,1 +1,6 @@
-.gitkeep
+
+# Build directory
+build/*
+!build/.gitkeep
+
+
