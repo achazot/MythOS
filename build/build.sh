@@ -35,7 +35,7 @@ main ()
     mkdir -p "$ISOLINUX_OUT"
     cp "$ISOLINUX_IN/"* "$ISOLINUX_OUT/"
     mkdir -p "$INSTALL_OUT"
-    cp "$KERNEL_IN/vmlinux" "$INSTALL_OUT/"
+    cp "$KERNEL_IN/vmlinuz" "$INSTALL_OUT/"
     cp "$INITRD_IN/initrd.gz" "$INSTALL_OUT/"
 
     # Create iso from iso_root
