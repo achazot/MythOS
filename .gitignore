@@ -1,6 +1,12 @@
 
-# Build directory
-build/*
-!build/.gitkeep
-
+##############################################
+#               Build directory              #
+##############################################
+#
+# generated isos
+build/target/*
+!build/target/.gitkeep
+# root of installer disk
+build/iso_root/*
+!build/iso_root/.gitkeep 
 
