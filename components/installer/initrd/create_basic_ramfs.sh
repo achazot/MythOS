@@ -21,7 +21,15 @@ cp -a /dev/{null,console,tty,sda1} ${TARGET}/dev
 
 # Utilities 
 cp -a ${REPOSITORY}/busybox ${TARGET}/bin/ 
-
+cd ${REPOSITORY}/ 
+ln -s busybox ${TARGET}/bin/ls 
+ln -s busybox ${TARGET}/bin/mount 
+ln -s busybox ${TARGET}/bin/echo
+ln -s busybox ${TARGET}/bin/sleep
+ln -s busybox ${TARGET}/bin/umount
+ln -s busybox ${TARGET}/bin/sh
+cd - 
+ 
 # Init script 
 cp -a  ${INITRD}/init ${TARGET}/
 
