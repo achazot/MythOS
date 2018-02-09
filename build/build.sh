@@ -35,7 +35,7 @@ main ()
     cp -ar "$ISOLINUX_IN" "$ISOLINUX_OUT"
     cp -a "$KERNEL_IN" "$INSTALL_OUT"
     cp -a "$INITRD_IN" "INSTALL_OUT"
-
+    
 
     # Create iso from iso_root
     genisoimage -v -J -r -l \
