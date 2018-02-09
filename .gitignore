@@ -4,9 +4,8 @@
 ##############################################
 #
 # generated isos
-target/output
+target/output/*
 !target/output/.gitkeep
 # root of installer disk
 target/iso_root/*
-!target/iso_root/.gitkeep 
-
+!target/iso_root/.gitkeep
