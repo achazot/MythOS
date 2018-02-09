@@ -1,17 +1,17 @@
-# Resulting initramfs must be packaged as a compressed cpio archive 
-# For embedded it directly in the kernel image set 
-# CONFIG_INITIRAMFS_SOURCE=<path_to_initramfs> before compiling the kernel 
-
 #!/bin/bash 
 
+# Resulting initramfs must be packaged as a compressed cpio archive 
+# For embedded it directly in the kernel image set 
+# CONFIG_INITIRAMFS_SOURCE=<path_to_initramfs> before compiling the kernel
+
 set -o errexit
-set -o nounset 
+set -o nounset
 set -o pipefail
 
 source ../../../config/default.conf  
 
 # Initialize target
-TARGET="${INITRD_IN}/initrd"
+TARGET="${INITRD_IN}/initramfs"
 [[ -d $TARGET ]] && rm -rf $TARGET
 mkdir $TARGET
 
